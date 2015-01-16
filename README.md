@@ -5,7 +5,10 @@
    Validar en Input
    
    Filter
+   
         Formatiar
+        
         validar
+        
    Format Rut
         
