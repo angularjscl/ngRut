@@ -1,0 +1,24 @@
+{
+  "name": "ngRut",
+  "version": "0.0.1",
+  "homepage": "https://github.com/angularjscl/ngRut",
+  "authors": [
+    "gbelmm@gmail.com"
+  ],
+  "description": "validador rut chileno en angularjs",
+  "main": "dist/ngRut.min.js",
+  "keywords": [
+    "angularjs",
+    "rut",
+    "chile"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
