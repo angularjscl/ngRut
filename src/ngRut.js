@@ -11,8 +11,8 @@ angular.module('ng-rut', [])
                     validaRut : function (rutCompleto) {
                         if (!/^[0-9]+-[0-9kK]{1}$/.test( rutCompleto )) return false;
                         var tmp = rutCompleto.split('-');
-
-                        return (Fn.dv(tmp[0])) == tmp[1].toLowerCase();
+                        if ( tmp[1] == 'K' ) tmp[1] = 'k';
+                        return (Fn.dv(tmp[0])) == tmp[1];
                     },
                     dv : function(T){
                         var M=0,S=1;
@@ -20,15 +20,15 @@ angular.module('ng-rut', [])
                             S=(S+T%10*(9-M++%6))%11;
                         return S?S-1:'k';
                     }
-                };
+            };
                 scope.$watch(attr.ngModel, function(value) {
                     if (value=='') return;
 
                     if (!Fn.validaRut(value)) {
-                        ctrl.$validators.rut=true;
+                        ctrl.$rutValido=false;
+                        ctrl.$setValidity('rutValido',true);
 
-
-                    } else ctrl.$validators.rut=false;
+                    } else  ctrl.$setValidity('rutValido',false);
                 });
 
 
